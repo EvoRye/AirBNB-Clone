@@ -20,7 +20,12 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+<<<<<<< HEAD
+    @listing = Listing.find(params[:id])
+=======
+>>>>>>> master
     @listing.destroy
+    redirect_to listings_path, status: :see_other
   end
 
   def show
