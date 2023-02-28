@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: %i[update show edit delete]
+  before_action :set_listing, only: %i[update show edit destroy]
 
   def index
     @listings = Listing.all
@@ -20,10 +20,6 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-<<<<<<< HEAD
-    @listing = Listing.find(params[:id])
-=======
->>>>>>> master
     @listing.destroy
     redirect_to listings_path, status: :see_other
   end
@@ -38,7 +34,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :location, :content, :price)
+    params.require(:listing).permit(:title, :location, :content, :price, :image)
   end
 
   def set_listing
