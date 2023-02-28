@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def ui_kit
+    @listing = Listing.first
   end
 end
