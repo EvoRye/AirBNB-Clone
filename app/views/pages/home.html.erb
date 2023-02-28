@@ -1,9 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<h3>Find the perfect vacation home</h3>
+<br>
+
 <div class='container'>
   <div class='row'>
     <% @listings.each do |listing| %>
-      <%= render "shared/card", listing: listing %>
+      <%= link_to listing_path(listing), class: "cards col-6 col-md-4 col-lg-3 no-decoration" do  %>
+        <%= render "shared/card", listing: listing %>
+      <% end %>
     <% end %>
   </div>
 </div>

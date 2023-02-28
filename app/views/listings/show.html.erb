@@ -1,7 +1,8 @@
 <div>
 <h2>Details of <%= @listing.title %></h2>
 
-<img src="<%= @listing.image %>" style="width: 250px; height: 250px" />
+<%= image_tag(@listing.image) %>
+
 <p><%= @listing.location %></p>
 <p><%= @listing.content %></p>
 <p><%= @listing.price %></p>
