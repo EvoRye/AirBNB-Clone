@@ -1,19 +1,33 @@
 .card-trip{
   width:  240px;
-  height: 500px;
-  border-radius: 4%;
-  overflow: hidden;
+  height: 340px;
+  position: relative;
 }
 
+
 .card-trip-infos p{
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .card-trip-infos h2{
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .card-trip-pricing{
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
+}
+
+.card-image{
+  width: 240px;
+  height: 250px;
+  border-radius: 4%;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.card-trip .card-heart{
+  font-size: 1.5rem;
+  color: white;
+  position: absolute; top:0; right:8px;
 }

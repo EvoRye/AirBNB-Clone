@@ -16,12 +16,14 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.update(listing_params)
-    @listing.save
+    redirect_to listing_path(@listing) if @listing.update(listing_params)
   end
 
   def destroy
+<<<<<<< HEAD
     @listing = Listing.find(params[:id])
+=======
+>>>>>>> master
     @listing.destroy
     redirect_to listings_path, status: :see_other
   end
@@ -36,7 +38,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, location, :content, :price)
+    params.require(:listing).permit(:title, :location, :content, :price)
   end
 
   def set_listing
