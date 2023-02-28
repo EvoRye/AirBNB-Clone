@@ -1,5 +1,8 @@
+<div>
 <h2>Details of <%= @listing.title %></h2>
 
 <p><%= @listing.location %></p>
 <p><%= @listing.content %></p>
 <p><%= @listing.price %></p>
+ <%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-size" %>
+</div>
