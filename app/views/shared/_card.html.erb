@@ -4,7 +4,7 @@
     <i class="fa-regular fa-heart"></i>
     <div class="card-trip-infos">
       <div>
-        <h2><strong><%=listing.title%></strong></h2>
+        <h2><strong><%= link_to listing.title, listing_path(listing) %></strong></h2>
         <p><%= listing.content %></p>
       </div>
       <h3 class="card-trip-pricing">€<%= listing.price%></h3>
