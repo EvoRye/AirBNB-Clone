@@ -20,3 +20,4 @@ puts "creating 8 listings"
 end
 
 puts "We created #{Listing.count} listings, there should be 8"
+
