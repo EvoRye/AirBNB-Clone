@@ -1,8 +1,12 @@
-.card-trip{
+.card{
   width:  240px;
   height: 340px;
+  margin: 3rem;
+}
+
+.card-trip{
+  width:  240px;
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .card-trip-infos p{
@@ -13,7 +17,7 @@
   font-size: 16px;
 }
 
-.card-trip-pricing{
+.card-trip-pricing h3{
   font-size: 12px;
   font-weight: bold;
 }
@@ -29,5 +33,5 @@
 .card-trip .card-heart{
   font-size: 1.5rem;
   color: white;
-  position: absolute; top:0; right:8px;
+  position: absolute; top:0; right:16px;
 }
