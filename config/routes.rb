@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'ui_kit', to: 'pages#ui_kit'
-  devise_for :users
   root to: "pages#home"
-  resources :listings
-
+  devise_for :users
   resources :bookings
+  resources :listings do
+    # resources :bookings
+  end
+  get 'ui_kit', to: 'pages#ui_kit'
 end

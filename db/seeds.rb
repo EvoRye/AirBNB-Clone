@@ -14,8 +14,6 @@ puts "there is #{User.count} user, there should be 1"
 
 puts "creating 8 listings"
 
-
-
 listing = Listing.create!(
   user: user,
   image: "https://source.unsplash.com/random/250x251/?house",
