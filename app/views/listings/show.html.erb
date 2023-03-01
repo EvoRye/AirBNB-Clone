@@ -1,14 +1,35 @@
-<div>
-<h2>Details of <%= @listing.title %></h2>
+<div class="container">
+  <div class="row">
+    <h2><strong>Details of <%= @listing.title %></strong></h2>
+  </div>
 
-<%= image_tag(@listing.image) %>
+  <div class="d-flex justify-content-between">
+    <p> 2 reviews <%= @listing.location %> </p>
+    <p><i class="fa-regular fa-heart"></i> <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p>
+  </div>
 
-<p><%= @listing.location %></p>
-<p><%= @listing.content %></p>
-<p><%= @listing.price %></p>
- <%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger btn-size" %>
+  <div class= grid-image>
+    <%= render "shared/grid", listing: @listing %>
+  </div>
+  <div class="info-details">
+    <p> 10 * guests 5 * bedrooms 5 * beds 3 * baths</p>
+    <p><%= @listing.content %></p>
+    <p><%= @listing.price %></p>
+  </div>
+
+  <div class="arrival">
+  <p><i class="fa-solid fa-door-closed"></i> <strong>Self check-in</strong><br>
+    You can check in with the doorman.</p>
+  <p><i class="fa-solid fa-car"></i> <strong>Drive Right Up</strong><br>
+    You can park your vechile in the private driveway</p>
+  <p><i class="fa-regular fa-star"></i> <strong>Experienced host</strong><br>
+    Novasol has 240 reviews for other places.</p>
+  </div>
+
+  <div class="buttons-container">
+    <p><%= link_to "Book Now", listings_path, class:"btn btn-primary"%></p>
+    <p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
+    <p><%= link_to "Back to Listings", listings_path %></p>
+    <p><%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %></p>
+  </div>
 </div>
-
-<p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
-<p><%= link_to "Back to Listings", listings_path %></p>
-<p><%= link_to "Book Now", new_listing_booking_path(@listing) %></p>

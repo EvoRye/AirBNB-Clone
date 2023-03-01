@@ -1,4 +1,7 @@
 <h1>Test Page</h1>
+
+
+
 <%# <%= render "shared/card", danko: "1" %>
 
 <%# booking button %>
@@ -6,7 +9,7 @@
 <%# listing card %>
 
 <%# cards grid %>
+<%= render "shared/grid", listing: @listing  %>
+<%# <%= render "shared/card", listing: @listing %>
 
-<%= render "shared/card", listing: @listing %>
-
-<%= render "shared/footer" %>
+<%# <%= render "shared/footer" %>
