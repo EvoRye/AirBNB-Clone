@@ -27,7 +27,7 @@
   </div>
 
   <div class="buttons-container">
-    <p><%= link_to "Book Now", listings_path, class:"btn btn-primary"%></p>
+    <p><%= link_to "Book Now", new_listing_booking_path(@listing), class:"btn btn-primary"%></p>
     <p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
     <p><%= link_to "Back to Listings", listings_path %></p>
     <p><%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %></p>
