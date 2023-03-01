@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[update show edit destroy]
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -10,12 +10,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @listing = Listing.find(params[:listing_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user
-    @booking.listing_id = current_listing
+    @booking.user = current_user
+    @booking.listing = Listing.find(params[:listing_id])
+    if @booking.save
+      redirect_to bookings_path
+    end
   end
 
   def edit
@@ -24,12 +28,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to bookings_link
+    redirect_to bookings_path
   end
 
   def destroy
     @booking.destroy
-    redirect_to bookings
+    redirect_to bookings_path
   end
 
   private

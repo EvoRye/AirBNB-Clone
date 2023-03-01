@@ -1,0 +1,10 @@
+<h2>My Bookings</h2>
+<hr>
+
+<% @bookings.each do |booking| %>
+  <h2><%= link_to booking.listing.title, booking_path(booking) %></h2>
+  <h4><%= booking.listing.location %></h4>
+  <img src="<%= booking.listing.image %>" alt="">
+  <p>Start Date: <%= booking.start_date %></p>
+  <p>End Date: <%= booking.end_date %></p>
+<% end %>
