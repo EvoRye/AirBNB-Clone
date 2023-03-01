@@ -1,0 +1,28 @@
+.btn-small {
+  color: black;
+  border: 1px solid black;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+text-decoration: none;
+}
+
+.text-center {
+text-align: center;
+}
+
+a:hover {
+color: rgb(142, 138, 138);
+}
+
+h3 {
+color: rgb(87, 86, 86);
+}
