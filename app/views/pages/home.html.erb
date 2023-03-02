@@ -1,35 +1,17 @@
 <h3>Find the perfect vacation home</h3>
-<div>
-  <nav class="navbar navbar-light bg-light justify-content-center">
-    <a class="navbar-brand" href="#"></a>
-    <div>
-      <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a City"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+
+</div class='row'>
+  <%= render "shared/hero" %>
+</div>
+  <div class='container'>
+    <div class='row'>
+      <% @listings.each do |listing| %>
+        <div class='col-md-3 mb-4'>
+          <%= link_to listing_path(listing), class: "no-decoration" do %>
+            <%= render "shared/card", listing: listing %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  </nav>
-</div>
-
-<br>
-
-<div>
-  <div class='container'>
-  <div class='row'>
-    <% @listings.each do |listing| %>
-      <div class='col-md-3'>
-        <%= link_to listing_path(listing), class: "no-decoration" do %>
-          <%= render "shared/card", listing: listing %>
-        <% end %>
-      </div>
-    <% end %>
   </div>
-</div>
-</div>
-</div class='row'>
-  <%= render "shared/footer" %>
 </div>

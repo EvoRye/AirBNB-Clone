@@ -1,0 +1,46 @@
+.new-booking-header {
+  color: rgb(98, 2, 98);
+  font-size: 4rem;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2px
+}
+
+#btn-submit {
+  background-color: purple;
+  color: antiquewhite;
+  padding: 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#btn-submit:hover {
+  background-color: rgb(98, 0, 98);
+  color: antiquewhite;
+}
+
+#btn-cancel {
+  background-color: antiquewhite;
+  color: rgb(113, 19, 4);
+  padding: 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid rgb(113, 19, 4);
+  transition: all 0.3s;
+}
+
+#btn-cancel:hover {
+  background-color: rgb(183, 2, 2);
+  color: antiquewhite;
+  padding: 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid rgb(113, 19, 4);
+}
