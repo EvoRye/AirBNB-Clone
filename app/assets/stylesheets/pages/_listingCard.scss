@@ -1,0 +1,22 @@
+.list {
+    display: flex;
+}
+.listingCard {
+    margin-bottom: 40px;
+    width: 270px;
+    }
+    
+    .listingCard__image {
+    height: 140px;
+    width: 250px;
+    }
+    
+    .listingCard_info {
+    display: flex;
+    margin-top: 10px;
+    padding-right: 30px;
+    }
+    
+    .listingCard__text {
+    margin-left: 15px;
+    }
