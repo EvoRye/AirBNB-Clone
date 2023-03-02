@@ -7,7 +7,7 @@
       <i class="fa-regular fa-heart"></i>
     </div>
     <div class="card-trip-infos">
-        <p><strong><%= booking.listing.title %>, <% booking.listing.location %></strong></p>
+        <p><strong><%= link_to booking.listing.title, booking_path(booking) %>, <% booking.listing.location %></strong></p>
         <p><%= booking.listing.content %></p>
           <p>Check In: <%= booking.start_date %></p>   
           <p>Check Out: <%= booking.end_date %></p>
