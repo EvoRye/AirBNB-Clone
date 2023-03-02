@@ -4,4 +4,11 @@
   <p>Start Date: <%= @booking.start_date %></p>
   <p>End Date: <%= @booking.end_date %></p>
   <p><%= link_to 'Edit Booking', edit_booking_path(@booking) %></p>
-  <p><%= link_to 'Delete Booking', booking_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+<h1>New review</h1>
+<%= simple_form_for [@booking, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, input_html: { min: '0', step: '5' } %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+

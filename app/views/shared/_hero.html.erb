@@ -3,13 +3,15 @@
   <div  class='hero row'>
     <h1 class='col col-6'>Find the perfect place on your travels.</h1>
     <div class='col col-3'>
-      <form class="form-inline ml-auto" action="<%= listings_path %>" method="GET">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search destinations">
-          <div class="input-group-append">
-            <button class="btn" id='btn-submit' type="submit">Search</button>
-          </div>
-        </div>
-      </form>
+          <div class="input-group">
+      <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a City"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
     </div>
   </div>

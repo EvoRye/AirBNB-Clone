@@ -9,6 +9,14 @@ class ListingsController < ApplicationController
         lng: listing.longitude
       }
     end
+    if params[:query].present?
+      sql_query = <<~SQL
+        listings.location ILIKE :query
+      SQL
+      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
   end
 
   def new
@@ -31,7 +39,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing
+    @reviews = @listing.reviews
   end
 
   def edit
