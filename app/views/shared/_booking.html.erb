@@ -1,20 +1,22 @@
-<div class="">
-  <div class="card-trip">
-    <div class = "card-image">
-      <img src="<%= booking.listing.image %>" style="width: 250px; height: 250px" />
-    </div>
-    <div class = "card-heart">
-      <i class="fa-regular fa-heart"></i>
-    </div>
-    <div class="card-trip-infos">
-        <p><strong><%= booking.listing.title %>, <% booking.listing.location %></strong></p>
-        <p><%= booking.listing.content %></p>
-          <p>Check In: <%= booking.start_date %></p>   
-          <p>Check Out: <%= booking.end_date %></p>
-          <p>Duration of stay: (<%= (booking.end_date - booking.start_date).to_i%> days)</p>
-    </div>
-    <div class="card-trip-pricing">
-      <h3>Total €<%= booking.listing.price * ( booking.end_date - booking.start_date) %></h3>
+<%= link_to booking_path(booking) do %>
+  <div class="">
+    <div class="card-trip">
+      <div class = "card-image">
+        <img src="<%= booking.listing.image %>" style="width: 250px; height: 250px" />
+      </div>
+      <div class = "card-heart">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <div class="card-trip-infos">
+          <p><strong><%= booking.listing.title %>, <% booking.listing.location %></strong></p>
+          <p><%= booking.listing.content %></p>
+            <p>Check In: <%= booking.start_date %></p>
+            <p>Check Out: <%= booking.end_date %></p>
+            <p>Duration of stay: (<%= (booking.end_date - booking.start_date).to_i%> days)</p>
+      </div>
+      <div class="card-trip-pricing">
+        <h3>Total €<%= booking.listing.price * ( booking.end_date - booking.start_date) %></h3>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
