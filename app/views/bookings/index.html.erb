@@ -1,10 +1,14 @@
-<h2>My Bookings</h2>
-<hr>
+<h2>Booking Confirmations</h2>
 
-<% @bookings.each do |booking| %>
-  <h2><%= link_to booking.listing.title, booking_path(booking) %></h2>
-  <h4><%= booking.listing.location %></h4>
-  <img src="<%= booking.listing.image %>" alt="">
-  <p>Start Date: <%= booking.start_date %></p>
-  <p>End Date: <%= booking.end_date %></p>
-<% end %>
+<div class="container">
+    <div class="row">
+      <% @bookings.each do |booking| %>
+      <div class='col-md-3'>
+        <%= render "shared/booking", booking: booking %>
+      </div>
+      <% end %>
+    </div>
+</div>
+<!-- 1. Replace "My Bookings" with "Booking confirmation" -->
+<!-- 2. Show how much the listing is going to cost for the booking period (price X (start date - end date)) -->
+<!-- 3. Show a discount section and apply discount if (first time booking == true OR booking period > 20 days)-->
