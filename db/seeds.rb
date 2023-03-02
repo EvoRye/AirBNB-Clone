@@ -35,7 +35,7 @@ listing = Listing.create!(
 listing = Listing.create!(
   user: user,
   image: "https://source.unsplash.com/random/250x253/?house",
-  title: "Entire rental unit",
+  title: "Amazing house by the water",
   location: "Amsterdam, NH, Netherlands",
   content: "Fabulous Luxury Loft, located in the coolest neighbourhood of Amsterdam!",
   price: 250
