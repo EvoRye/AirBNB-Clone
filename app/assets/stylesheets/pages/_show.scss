@@ -3,7 +3,11 @@
 }
 
 .btn{
-  border-radius: 16px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: rgb(224, 210, 192);
 }
 
 .container{

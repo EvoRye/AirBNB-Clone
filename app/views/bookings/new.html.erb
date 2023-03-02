@@ -1,7 +1,13 @@
-<h1>Create a New Booking</h1>
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit %>
-<% end %>
-<%= link_to "Cancel", :back %>
+<div class='container pt-5'>
+  <h1 class='new-booking-header'>Create a New Booking</h1>
+  <div class='col-6'>
+    <%= simple_form_for [@listing, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <div class='btns-container'>
+      <%= f.button :submit, :id => 'btn-submit'  %>
+      <%= link_to "Cancel", :back, :id => 'btn-cancel'  %>
+      </div>
+    <% end %>
+  </div>
+</div>
