@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings, except: [:index, :show, :edit, :update, :destroy]
   end
+
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
-
+    resources :reviews, only: %i[new create]
   end
-
 end

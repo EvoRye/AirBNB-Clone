@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing
+    @reviews = @listing.reviews
   end
 
   def edit
