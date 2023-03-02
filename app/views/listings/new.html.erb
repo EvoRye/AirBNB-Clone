@@ -1,10 +1,16 @@
-<h1>Create a New Listing</h1>
-<%= simple_form_for @listing do |f| %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :content %>
-  <%= f.input :price %>
-  <%= f.input :image %>
-  <%= f.button :submit %>
-<% end %>
-<%= link_to "Cancel", listings_path %>
+<div class='container pt-5'>
+  <h1 class='new-booking-header'>Create a New Listing</h1>
+  <div class='col-6'>
+    <%= simple_form_for @listing do |f| %>
+      <%= f.input :title %>
+      <%= f.input :location %>
+      <%= f.input :content %>
+      <%= f.input :price %>
+      <%= f.input :image %>
+      <div class='btns-container'>
+        <%= f.button :submit, :id => 'btn-submit' %>
+        <%= link_to "Cancel", listings_path, :id => 'btn-cancel' %>
+      </div>
+    <% end %>
+  </div>
+</div>

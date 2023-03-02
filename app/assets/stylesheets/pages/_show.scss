@@ -2,12 +2,18 @@
   font-size: 16;
 }
 
-.btn{
-  border-radius: 5px;
+.btn {
+  background-color: purple;
+  color: antiquewhite;
+  padding: 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .btn:hover {
-  background-color: rgb(224, 210, 192);
+  background-color: rgb(98, 0, 98);
+  color: antiquewhite;
 }
 
 .container{
