@@ -1,19 +1,30 @@
-
-<h3>These are all our apartmanets in this location</h3>
-
+<h3>These are our apartments in this location</h3>
+<br>
 <div class='container'>
   <div class='row'>
-    <% @listings.each do |listing| %>
-      <%= link_to listing_path(listing), class: "cards col-6 col-md-4 col-lg-3 no-decoration" do %>
-        <%= render "shared/card", listing: listing %>
-      <% end %>
-    <% end %>
+    <div class="col-lg-8">
+      <div class='row'>
+        <% @listings.in_groups_of(2, false) do |group| %>
+          <div class='col-lg-6'>
+            <% group.compact.each do |listing| %>
+              <%= link_to listing_path(listing), class: "cards col-6 col-md-4 col-lg-3 no-decoration" do %>
+                <%= render "shared/card", listing: listing %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="sticky-top">
+        <div class="map">
+          <div style="height: 100vh;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<div>
-<%= link_to "Back to Homepage", root_path %>
 </div>
