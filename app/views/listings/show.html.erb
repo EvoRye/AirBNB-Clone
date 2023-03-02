@@ -17,19 +17,31 @@
     <p><%= @listing.price %></p>
   </div>
 
+<div class="d-flex justify-content-between">
   <div class="arrival">
-  <p><i class="fa-solid fa-door-closed"></i> <strong>Self check-in</strong><br>
-    You can check in with the doorman.</p>
-  <p><i class="fa-solid fa-car"></i> <strong>Drive Right Up</strong><br>
-    You can park your vechile in the private driveway</p>
-  <p><i class="fa-regular fa-star"></i> <strong>Experienced host</strong><br>
-    Novasol has 240 reviews for other places.</p>
+    <p><i class="fa-solid fa-door-closed"></i> <strong>Self check-in</strong><br>
+      You can check in with the doorman.</p>
+    <p><i class="fa-solid fa-car"></i> <strong>Drive Right Up</strong><br>
+      You can park your vechile in the private driveway</p>
+    <p><i class="fa-regular fa-star"></i> <strong>Experienced host</strong><br>
+      Novasol has 240 reviews for other places.</p><br><br>
+    <p>- Free parking on site<br>
+      - Indoor swimming pool<br>
+      - Not suitable for youth groups<br>
+      - Optional: Bedlinen incl towels<br><br>
+        No pets allowed
+    </p>
+    <h3>What this place offers</h3>
+    <p><i class="fa-solid fa-kitchen-set"></i>-Kitchen <i class="fa-solid fa-wifi"></i>-Wifi</p><br>
+    <p><i class="fa-solid fa-desktop"></i>-Dedicated workspace <i class="fa-solid fa-water-ladder"></i>-Pool</p><br>
+    <p><i class="fa-solid fa-shirt"></i>-Washer/Dryer <i class="fa-solid fa-tv"></i>-TV</p><br>
+    <p></p><br>
   </div>
 
-  <div class="buttons-container">
-    <p><%= link_to "Book Now", new_listing_booking_path(@listing), class:"btn btn-primary"%></p>
-    <p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
-    <p><%= link_to "Back to Listings", listings_path %></p>
-    <p><%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %></p>
-  </div>
+    <div class="buttons">
+      <p><%= link_to "Book Now", listings_path, class:"btn btn-primary"%></p>
+      <p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
+      <p><%= link_to "Back to Listings", listings_path %></p>
+      <p><%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %></p>
+    </div>
 </div>
