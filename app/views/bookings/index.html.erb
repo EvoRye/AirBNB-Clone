@@ -1,14 +1,25 @@
-<h2>Booking Confirmations</h2>
+<h2>My Bookings</h2>
 
-<div class="container">
-    <div class="row">
-      <% @bookings.each do |booking| %>
-      <div class='col-md-3'>
-        <%= render "shared/booking", booking: booking %>
+
+
+<div class='container pt-5'>
+  <div class='row'>
+    <% @bookings.each do |booking| %>
+      <div class="col-3">
+        <div class="card-trip">
+          <div class = "card-image">
+            <img src="<%= booking.listing.image %>" style="width: 250px; height: 250px" />
+          </div>
+          <div class="card-trip-infos">
+              <p><strong><%= booking.listing.title %></strong></p>
+              <p>Start Date: <%= booking.start_date %></p>
+              <p>End Date: <%= booking.end_date %></p>
+          </div>
+          <div class="card-trip-pricing">
+            <h3>€<%= booking.listing.price %></h3>
+          </div>
+        </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
-<!-- 1. Replace "My Bookings" with "Booking confirmation" -->
-<!-- 2. Show how much the listing is going to cost for the booking period (price X (start date - end date)) -->
-<!-- 3. Show a discount section and apply discount if (first time booking == true OR booking period > 20 days)-->
