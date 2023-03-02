@@ -1,4 +1,14 @@
-"https://source.unsplash.com/random/250x250/?house"
+require "open-uri"
+require "yaml"
+
+file = "https://gist.githubusercontent.com/dmilon/e897669bfa411bfdd92c9f59f91dd6fe/raw/d1e1b06e25616771fddf44bf066765f518b0655d/imdb.yml"
+sample = YAML.load(URI.open(file).read)
+
+# "https://source.unsplash.com/random/250x250/?house"
+
+puts "deleting bookings"
+Booking.destroy_all
+puts "there are #{Booking.count} users, there should be 0"
 
 puts "deleting lists"
 Listing.destroy_all
@@ -63,7 +73,7 @@ listing = Listing.create!(
   user: user,
   image: "https://source.unsplash.com/random/250x256/?house",
   title: "Sleep in a Hub!",
-  location: "Amsterdam, Noord-Holland, Netherlands",
+  location: "Badhoevedorp, Netherlands",
   content: "CityHub is a urban hotel for the new generation of travelers.",
   price: 100
 )
@@ -72,7 +82,7 @@ listing = Listing.create!(
   user: user,
   image: "https://source.unsplash.com/random/250x257/?house",
   title: "Design apartment w/ terrace!",
-  location: "Amsterdam, Noord-Holland, Netherlands",
+  location: "Amstelveen, Netherlands",
   content: "Lovely design apartment with canal view, next to the famous Dutch windmill.",
   price: 174
 )
