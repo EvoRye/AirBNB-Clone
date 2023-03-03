@@ -1,24 +1,25 @@
 <div class="container pt-5">
   <div class="row">
     <h2><strong>Details of <%= @listing.title %></strong></h2>
-   <p> <%= @listing.location %></p>
+    <% if @reviews.present? %>
+      <div class="d-flex justify-content-between">
+        <p> <%= @reviews.first.rating %> <i class="fa-solid fa-star"></i>  Reviews: <%=@reviews.count %></p>
+        <% end %>
+        <p> <%= @listing.location %></p>
+        <p>Save <i class="fa-regular fa-heart"></i> Share <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-between">
-  <% if @reviews.present? %>
- <p> <%= @reviews.first.rating %><i class="fa-solid fa-star"></i></p>
-  <% end %>
-    <p><i class="fa-regular fa-heart"></i> <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p>
-  </div>
 
   <div class= grid-image>
     <%= render "shared/grid", listing: @listing %>
   </div>
 
   <div class="info-details">
-    <p> 4 guests | 2 bedrooms | 4 beds | 2 baths</p>
+    <h3>This is hosted by Robertae F </h3>
+    <p> 4 guests  | 2 bedrooms | 4 beds | 2 baths</p>
     <p><%= @listing.content %></p>
-    <p>€<%= @listing.price %></p>
+    <p><strong>€<%= @listing.price %></strong></p>
   </div>
 
   <div class="d-flex justify-content-between">
@@ -28,18 +29,23 @@
     <p><i class="fa-solid fa-car"></i> <strong>Drive Right Up</strong><br>
       You can park your vechile in the private driveway</p>
     <p><i class="fa-regular fa-star"></i> <strong>Experienced host</strong><br>
-      Novasol has 240 reviews for other places.</p><br><br>
+      Novasol has 240 reviews for other places.</p><br>
     <p>- Free parking on site<br>
       - Indoor swimming pool<br>
       - Not suitable for youth groups<br>
       - Optional: Bedlinen incl towels<br><br>
         No pets allowed
+    <div class="offers">
+      <br>
+      <h3>What this place offers</h3>
+      <p><i class="fa-solid fa-kitchen-set"></i>-Kitchen</p>
+      <p><i class="fa-solid fa-wifi"></i>-Wifi</p>
+      <p><i class="fa-solid fa-desktop"></i>-Dedicated workspace </p>
+      <p><i class="fa-solid fa-water-ladder"></i>-Pool</p>
+      <p><i class="fa-solid fa-shirt"></i>-Washer/Dryer</p>
+      <p><i class="fa-solid fa-tv"></i>-TV</p>
+    </div>
     </p>
-    <h3>What this place offers</h3>
-    <p><i class="fa-solid fa-kitchen-set"></i>-Kitchen <i class="fa-solid fa-wifi"></i>-Wifi</p><br>
-    <p><i class="fa-solid fa-desktop"></i>-Dedicated workspace <i class="fa-solid fa-water-ladder"></i>-Pool</p><br>
-    <p><i class="fa-solid fa-shirt"></i>-Washer/Dryer <i class="fa-solid fa-tv"></i>-TV</p><br>
-    <p></p><br>
   </div>
 
   <div class="buttons">
