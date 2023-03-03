@@ -12,11 +12,15 @@
 
 h1 {
   font-weight: 600;
-  font-size: 6rem;
+  font-size: 3rem;
   color: antiquewhite;
 }
 
 .form-control {
   margin-right: 5px;
   border-radius: 5px;
+}
+
+a :hover {
+  color: rgb(98, 2, 98);
 }
