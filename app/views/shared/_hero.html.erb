@@ -1,7 +1,7 @@
 
 
   <div  class='hero row'>
-    <h1 class='col col-6'>Find the perfect place on your travels.</h1>
+    <h1 class='col col-6'>Find the perfect place for your travels.</h1>
     <div class='col col-3'>
           <div class="input-group">
       <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
@@ -10,7 +10,7 @@
           class: "form-control",
           placeholder: "Find a City"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", id: 'btn-submit' %>
       <% end %>
     </div>
     </div>

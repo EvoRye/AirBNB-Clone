@@ -20,3 +20,18 @@ h1 {
   margin-right: 5px;
   border-radius: 5px;
 }
+
+#btn-submit {
+  background-color: purple;
+  color: antiquewhite;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+}
+
+#btn-submit:hover {
+  background-color: rgb(98, 0, 98);
+  color: antiquewhite;
+}
