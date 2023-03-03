@@ -58,4 +58,16 @@
       <p><%= link_to "Back to Listings", listings_path ,class: "no-decoration"%></p>
     </div>
   </div>
+
+
+</div>
+<div>
+<br>
+  <h3>Reviews</h3>
+    <% @listing.reviews.each do |review| %>
+     <p>
+      <%= review.content %>
+      <%= review.rating  %> <i class="fa-solid fa-star"></i>
+      </p>
+    <% end %>
 </div>
