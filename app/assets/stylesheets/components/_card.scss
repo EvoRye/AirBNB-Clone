@@ -3,17 +3,24 @@
   height: 340px;
   margin: 3rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 .card-trip{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width:  240px;
+  height: 440px;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+
 }
 
 .card-trip-infos p{
   font-size: 12px;
-  padding: 12px;
+  padding: 0 12px;
 }
 
 .card-trip-infos h2{
@@ -22,16 +29,17 @@
 }
 
 .card-trip-pricing h3{
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
-  padding: 12px;
+  padding: 0 12px;
+  color: rgb(98, 0, 98);
 }
 
 .card-image{
   width: 100%;
-  border-radius: 4%;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .card-trip .card-heart{
