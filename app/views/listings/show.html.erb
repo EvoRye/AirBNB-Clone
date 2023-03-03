@@ -1,13 +1,15 @@
 <div class="container pt-5">
   <div class="row">
     <h2><strong>Details of <%= @listing.title %></strong></h2>
-    <% if @reviews.present? %>
       <div class="d-flex justify-content-between">
-        <p> <%= @reviews.first.rating %> <i class="fa-solid fa-star"></i>  Reviews: <%=@reviews.count %></p>
-        <% end %>
         <p> <%= @listing.location %></p>
         <p>Save <i class="fa-regular fa-heart"></i> Share <i class="fa-sharp fa-solid fa-arrow-up-from-bracket"></i></p>
-    </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <% if @reviews.present? %>
+          <p> <%= @reviews.first.rating %> <i class="fa-solid fa-star"></i>  Reviews: <%=@reviews.count %></p>
+          <% end %>
+      </div>
   </div>
 
 
@@ -16,8 +18,8 @@
   </div>
 
   <div class="info-details">
-    <h3>This is hosted by Robertae F </h3>
-    <p> 4 guests  | 2 bedrooms | 4 beds | 2 baths</p>
+    <h3>This Property is Hosted by: Robertae F </h3>
+    <p> <i class="fa-solid fa-children"></i> 4 guests  | <i class="fa-solid fa-people-roof"></i> 2 bedrooms | <i class="fa-solid fa-bed"></i> 4 beds | <i class="fa-solid fa-bath"></i> 2 baths</p>
     <p><%= @listing.content %></p>
     <p><strong>€<%= @listing.price %></strong></p>
   </div>
@@ -37,7 +39,7 @@
         No pets allowed
     <div class="offers">
       <br>
-      <h3>What this place offers</h3>
+      <h3>What this accommation has to  offer:</h3>
       <p><i class="fa-solid fa-kitchen-set"></i>-Kitchen</p>
       <p><i class="fa-solid fa-wifi"></i>-Wifi</p>
       <p><i class="fa-solid fa-desktop"></i>-Dedicated workspace </p>
@@ -48,10 +50,7 @@
     </p>
   </div>
 
-  <div class="buttons">
-    <p><%= link_to "Book Now",  new_listing_booking_path(@listing), class:"btn btn-primary"%></p>
-    <p><%= link_to "Edit Listing", edit_listing_path(@listing) %></p>
-    <p><%= link_to "Back to Listings", listings_path %></p>
-    <p><%= link_to "Delete", listing_path(@listing),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %></p>
+  <div class="booking-container">
+    <%= render "bookings/new", listing: @listing %>
   </div>
 </div>
