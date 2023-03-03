@@ -1,4 +1,4 @@
-  <div class='container pt-5'>
+  <div class='container pt-5 mt-4 mb-4'>
     <div class='row'>
     <h3>Booking Confirmation</h3>
       <% @bookings.each do |booking| %>
@@ -10,7 +10,7 @@
       <% end %>
     </div>
   </div>
-    <p><%= link_to "Back to listings.", root_path  %></p>
+    <p><%= link_to "Back to listings", root_path, class: "no-decoration" %></p>
 </div>
 
 
