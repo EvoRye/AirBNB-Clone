@@ -32,3 +32,9 @@
 .buttons-container{
   justify-content: end;
 }
+
+.img {
+  object-fit: cover;
+  border-radius: 25px;
+  // border: 2px solid white;
+}

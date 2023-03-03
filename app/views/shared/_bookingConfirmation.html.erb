@@ -1,0 +1,15 @@
+<%= link_to booking_path(booking), class: "no-decoration" do %>
+<div class="m-3 p-4 text-center bg-dark rounded-4">
+  <h1>Booking successful!</h1>
+  <h3>Your stay in <%= booking.listing.title %>, <%= booking.listing.location %></h3>
+  <h3>From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></h3>
+
+  <p style="color: white;">Price per night: €<%= booking.listing.price %></p>
+  <p style="color: white;">Total: €<%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+</div>
+
+<div class="text-center mb-5">
+  <h1><%= link_to bookings_path, class: "btn btn-primary btn-flat rounded-5" do %>
+    <i class="fa-solid fa-calendar-days"></i>  Manage My Bookings
+  <% end %></h1>
+</div>
