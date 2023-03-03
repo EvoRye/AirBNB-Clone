@@ -1,5 +1,6 @@
 .arrival{
   font-size: 16;
+  border-bottom: 2px rgb(160, 160, 160) solid;
 }
 
 .btn {
@@ -27,10 +28,17 @@
 .info-details{
   font-size: 16;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  border-bottom: 2px rgb(160, 160, 160) solid;
 }
 
-.buttons-container{
-  justify-content: end;
+.offers{
+  margin-top: 1.5rem;
+  border-top: 2px rgb(160, 160, 160) solid;
+}
+
+.fa-solid{
+  color: purple;
 }
 
 .img {

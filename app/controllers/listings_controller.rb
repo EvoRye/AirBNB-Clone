@@ -40,6 +40,7 @@ class ListingsController < ApplicationController
 
   def show
     @reviews = @listing.reviews
+    @booking = Booking.new
   end
 
   def edit
